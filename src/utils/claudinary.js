@@ -15,7 +15,8 @@ cloudinary.config({
           resource_type: "auto"
         })
         //file has been uploaded successfully
-        console.log("file is uploaded on claudinary ", response.url);
+        // console.log("file is uploaded on claudinary ", response.url);
+        fs.unlinkSync(localFilePath)
         return response;
       } catch (error) {
         fs.unlinkSync(localFilePath) // remove the locally saved temporary file as the upoad operation got failed
